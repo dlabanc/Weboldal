@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KategoriaController;
+use App\Http\Controllers\TesztController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +23,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+
+Route::get('/api/tesztek', [TesztController::class, 'index']); // <-- összeset lekéri
+Route::get('/api/kategoriak', [KategoriaController::class, 'index']); // <-- összeset lekéri
+
+Route::get('/api/kategoria/{id}', [KategoriaController::class, 'show']);
+Route::get('/api/teszt/{id}', [TesztController::class, 'show']); //<-- ID alapján 1-et lekér
+
+Route::get('/api/tesztek/expand', [TesztController::class, 'expandAll']);

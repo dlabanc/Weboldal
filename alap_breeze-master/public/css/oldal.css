@@ -1,0 +1,40 @@
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:5px;
+}
+
+header,artice {
+    margin: 20px;
+}
+
+
+.valaszok {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.kerdes {
+    width:100%;
+    background-color: rgb(49, 28, 0);
+    color:white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.valasz {
+    margin:5px;
+    text-align:center;
+    width:95%;
+    background-color: rgb(195, 214, 248);
+    border-radius: 5px;
+    border:0.5px solid rgb(49, 28, 0);
+}
+
+@media screen and (max-width: 800px) {
+    .valaszok {
+        grid-template-columns: 1fr;
+    }
+}
+
